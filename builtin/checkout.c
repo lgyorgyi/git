@@ -406,7 +406,7 @@ static int checkout_worktree(const struct checkout_opts *opts,
 	disable_fscache();
 	remove_marked_cache_entries(&the_index, 1);
 	remove_scheduled_dirs();
-	errs |= finish_delayed_checkout(&state, &nr_checkouts);
+	errs |= finish_delayed_checkout(&state, &nr_checkouts, opts->show_progress);
 
 	if (opts->count_checkout_paths) {
 		if (nr_unmerged)
